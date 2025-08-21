@@ -1,0 +1,330 @@
+/* 기본 스타일 초기화 및 설정 */
+:root {
+    /* TODO: 원하는 색상으로 변경해보세요 */
+    --primary-color: #3498db; /* 주 색상 */
+    --secondary-color: #2c3e50; /* 부 색상 (어두운 텍스트) */
+    --background-color: #f4f4f4; /* 배경 색상 */
+    --surface-color: #ffffff; /* 카드 등 표면 색상 */
+    --text-color: #333; /* 기본 텍스트 색상 */
+    --light-text-color: #777; /* 연한 텍스트 색상 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* 메뉴 클릭 시 부드럽게 스크롤 */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* 공통 스타일 */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 4rem 2rem;
+    overflow: hidden;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* 헤더 & 네비게이션 */
+header {
+    background: var(--surface-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu li {
+    margin-left: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+main {
+    padding-top: 70px; /* 고정된 헤더 높이만큼 패딩 추가 */
+}
+
+/* 홈 (Hero) 섹션 */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop') center/cover;
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 2rem;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    color: white;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* 버튼 스타일 */
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #4a6279;
+}
+
+
+/* 소개 (About) 섹션 */
+#about {
+    background: var(--surface-color);
+}
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-skills h3 {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+}
+
+.about-skills ul {
+    list-style: none;
+}
+
+.about-skills li {
+    background: var(--background-color);
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+}
+
+
+/* 프로젝트 섹션 */
+#projects {
+    /* 섹션 간 구분을 위해 배경색 교차 적용 */
+    background: var(--surface-color);
+}
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--surface-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* 프로젝트 카드는 배경이 흰색이므로 테두리를 추가해 구분감 부여 */
+    border: 1px solid #eee;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3,
+.project-card p,
+.project-card .project-links {
+    padding: 0 1.5rem;
+}
+
+.project-card h3 {
+    padding-top: 1.5rem;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    min-height: 80px;
+}
+
+.project-card .project-links {
+    padding-bottom: 1.5rem;
+}
+
+.project-links a {
+    margin-right: 0.5rem;
+}
+
+/* 연락처 섹션 */
+#contact {
+    background: var(--secondary-color);
+    color: white;
+    text-align: center;
+}
+
+#contact h2 {
+    color: white;
+}
+
+.contact-links {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.contact-links li {
+    margin-bottom: 1rem;
+}
+
+.contact-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+.contact-links a:hover {
+    text-decoration: underline;
+}
+
+/* 푸터 */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #222;
+    color: #aaa;
+}
+
+/* ================================================================ */
+/* 자격증 섹션 스타일 - 새로 추가된 부분 */
+/* ================================================================ */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.cert-card {
+    background: var(--surface-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+.cert-card h3 {
+    font-size: 1.25rem;
+    color: var(--primary-color); /* 자격증 이름에 포인트 색상 적용 */
+    margin-bottom: 0.5rem;
+}
+
+.cert-card .issuer {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.cert-card .date {
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+    margin-bottom: 0;
+}
+
+
+/* 반응형 디자인 (모바일) */
+@media(max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+
+    .nav-menu {
+        /* 모바일에서는 메뉴 숨기기 (추후 햄버거 메뉴로 개선 가능) */
+        display: none;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+}
