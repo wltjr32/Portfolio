@@ -1,12 +1,10 @@
-/* 기본 스타일 초기화 및 설정 */
 :root {
-    /* TODO: 원하는 색상으로 변경해보세요 */
-    --primary-color: #3498db; /* 주 색상 */
-    --secondary-color: #2c3e50; /* 부 색상 (어두운 텍스트) */
-    --background-color: #f4f4f4; /* 배경 색상 */
-    --surface-color: #ffffff; /* 카드 등 표면 색상 */
-    --text-color: #333; /* 기본 텍스트 색상 */
-    --light-text-color: #777; /* 연한 텍스트 색상 */
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --background-color: #f4f4f4;
+    --surface-color: #ffffff;
+    --text-color: #333;
+    --light-text-color: #777;
 }
 
 * {
@@ -16,7 +14,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* 메뉴 클릭 시 부드럽게 스크롤 */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -26,7 +24,6 @@ body {
     color: var(--text-color);
 }
 
-/* 공통 스타일 */
 .container {
     max-width: 1100px;
     margin: auto;
@@ -49,7 +46,6 @@ p {
     margin-bottom: 1rem;
 }
 
-/* 헤더 & 네비게이션 */
 header {
     background: var(--surface-color);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -97,10 +93,9 @@ nav {
 }
 
 main {
-    padding-top: 70px; /* 고정된 헤더 높이만큼 패딩 추가 */
+    padding-top: 70px;
 }
 
-/* 홈 (Hero) 섹션 */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop') center/cover;
     height: calc(100vh - 70px);
@@ -122,7 +117,6 @@ main {
     margin-bottom: 2rem;
 }
 
-/* 버튼 스타일 */
 .btn {
     display: inline-block;
     background: var(--primary-color);
@@ -153,8 +147,6 @@ main {
     background: #4a6279;
 }
 
-
-/* 소개 (About) 섹션 */
 #about {
     background: var(--surface-color);
 }
@@ -181,10 +173,7 @@ main {
     border-radius: 5px;
 }
 
-
-/* 프로젝트 섹션 */
 #projects {
-    /* 섹션 간 구분을 위해 배경색 교차 적용 */
     background: var(--surface-color);
 }
 .project-grid {
@@ -199,7 +188,6 @@ main {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* 프로젝트 카드는 배경이 흰색이므로 테두리를 추가해 구분감 부여 */
     border: 1px solid #eee;
 }
 
@@ -237,7 +225,6 @@ main {
     margin-right: 0.5rem;
 }
 
-/* 연락처 섹션 */
 #contact {
     background: var(--secondary-color);
     color: white;
@@ -274,9 +261,6 @@ footer {
     color: #aaa;
 }
 
-/* ================================================================ */
-/* 자격증 섹션 스타일 - 새로 추가된 부분 */
-/* ================================================================ */
 .cert-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -298,7 +282,7 @@ footer {
 
 .cert-card h3 {
     font-size: 1.25rem;
-    color: var(--primary-color); /* 자격증 이름에 포인트 색상 적용 */
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
 }
 
@@ -313,14 +297,11 @@ footer {
     margin-bottom: 0;
 }
 
-
-/* 반응형 디자인 (모바일) */
 @media(max-width: 768px) {
     h1 { font-size: 2.5rem; }
     h2 { font-size: 2rem; }
 
     .nav-menu {
-        /* 모바일에서는 메뉴 숨기기 (추후 햄버거 메뉴로 개선 가능) */
         display: none;
     }
     
