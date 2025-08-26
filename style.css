@@ -253,7 +253,6 @@ main {
     text-decoration: underline;
 }
 
-/* 푸터 */
 footer {
     text-align: center;
     padding: 2rem;
@@ -297,7 +296,6 @@ footer {
     margin-bottom: 0;
 }
 
-/* 학력(education) 카드 스타일 */
 .education-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -335,7 +333,6 @@ footer {
 .status-graduated { background: #27ae60; }
 .status-enrolled { background: #f39c12; }
 
-/* 소개(about) 스타일 */
 .about-hero {
     display: grid;
     grid-template-columns: 1fr;
@@ -355,15 +352,14 @@ footer {
 }
 
 .profile-pic img {
-    width: 120px;
-    height: 120px;
+    width: 180px;       /* 더 크게 표시 */
+    height: 180px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 50%; /* 원형으로 보이게 변경 (원하지 않으면 원래값으로 복원) */
     border: 4px solid rgba(52,152,219,0.12);
 }
 
 .profile-info h1 { font-size: 1.6rem; margin: 0 0 0.25rem 0; }
-.title { color: var(--primary-color); font-weight: 600; margin-bottom: 0.6rem; }
 .bio { color: var(--light-text-color); margin-bottom: 0.8rem; }
 
 .profile-actions { margin-bottom: 0.8rem; }
@@ -403,5 +399,5 @@ footer {
 
 @media (max-width: 900px) {
     .profile-card { flex-direction: row; }
-    .profile-pic img { width:90px; height:90px; }
+    .profile-pic img { width: 140px; height: 140px; } /* 반응형에서의 크기 */
 }
